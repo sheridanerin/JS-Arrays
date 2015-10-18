@@ -216,8 +216,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 // in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+  function addTen(numbers) {
+    var newArray = [];
+    for(var i = 0; i < numbers.length; i++) {
+      newArray[i] = parseInt(numbers[i]) + 10; 
+    }
+    return newArray;
+  }
 
-
+newNumbers = addTen(numbers);
+console.log(newNumbers);
 
 //Next Problem
 
@@ -238,6 +246,13 @@ for(var i = 0; i < num2; i++){
 // Return the array which is longest.
 
   //Code Here
+  function longestArray(arr1, arr2) {
+    if (arr1 >= arr2) {
+      return arr1;
+    } else {
+      return arr2;
+    }
+  }
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -245,7 +260,21 @@ for(var i = 0; i < num2; i++){
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
+
+
   //Code Here
+  function both(arr1, arr2) {
+    var newArray = [];
+    var shorty = (arr1.length < arr2.length) ? a : b;
+    var longPants = arr1.length > arr2.length ? a : b;
+    shorty.forEach(function (element) {
+      if (longPants.indexOf(element) !== -1) {
+        newArray.push(element);
+      }
+    });
+    return newArray;
+  }
+
   
   
   
@@ -287,17 +316,28 @@ sure that it's equal to 4. */
 
   //Code Here
 
+  devMountainEmployees.push(tyler);
+  devMountainEmployees.push(cahlan);
+  devMountainEmployees.push(ryan);
+  devMountainEmployees.push(colt);
+
+  console.log(devMountainEmployees.length);
+
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+ function removeEmp(devMountainEmployees, empToRemove) {
+  for (var i = 0; i < devMountainEmployees.length; i++) {
+    if (devMountainEmployees[i] === empToRemove) {
+      delete devMountainEmployees[i];
+    }
+  }
+ };
 
 
 
 //NEXT PROBLEM
-
-
 
 
 /*Now we're going to combine what we've learned today (objects) with what we learned
@@ -333,19 +373,33 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+  var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
 //include this as one of the objects in your array.
-var user1 = {
+users.push({
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-};
+});
 
 //Your Code Here
+users.push({
+    name: 'Erin Sheridan',
+    email: 'sheridanerin@gmail.com',
+    password: 'iLoveJavaScriptWOO',
+    username: 'dingDong'
+});
+users.push({
+    name: 'Luis Hernandez',
+    email: 'annoyingMan@gmail.com',
+    password: 'maybeErinIsABi**',
+    username: 'ThisIsAwesome'
+});
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -356,6 +410,13 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  function deleteUser(users, email) {
+    users.forEach(function (user) {
+      if (user.email === email) {
+        users.splice(users.indexOf(user), 1);
+      }
+    });
+  }
 
 //The activity we just did is very much how data works in 'the real world'.
 
