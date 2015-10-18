@@ -8,6 +8,9 @@ var arr = [10,20,30];
 // item in the given array.
 
   //Code Here
+  function first(arr) {
+    return arr[0];
+  }
 
 
 //Next problem
@@ -21,7 +24,9 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+function last() {
+  return arr[arr.length - 1];
+}
 
 //Next Problem
 
@@ -32,7 +37,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 // and alerts every item in the array.
 
   //Code Here
-
+function looper(family) {
+  for (var i = 0; i < family.length; i++) {
+    alert(family[i]);
+  }
+}
 
 //Next problem
 
@@ -46,6 +55,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
   //Code Here
 
+  function reversedLooper(letters) {
+    for (var i = letters.length - 1; i >= 0; i--) {
+      alert(letters[i]);
+    }
+  }
 
 //Next Problem
 
@@ -56,7 +70,13 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 // from the given array.
 
   //Code Here
-
+function evenFinder(nums) {
+  for (var i = nums.length; i >= 0; i--) {
+    if (nums[i] % 2 !== 0) {
+      nums.splice(i, 1);
+    }
+  }
+}
 
 //Next problem
 
@@ -74,6 +94,17 @@ var odds = [];
 
   //Code Here
 
+  function divider(nums, evens, odds) {
+    var newArray = [evens, odds];
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 === 0) {
+        newArray[evens.push(i)];
+      } else {
+        newArray[odds.push(i)];
+      }
+    }
+    return newArray;
+  }
 
 //Next Problem
 
@@ -89,7 +120,15 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 // array. If it is, return true, if it's not, return false
 
   //Code Here
-
+  function finder(numbers) {
+    var num = getRandomArbitrary();
+    for (var i = 0; i < numbers.length; i++) {
+      if (numbers[i] === num) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 //Next problem
 
@@ -100,6 +139,13 @@ var str = 'this is my sentence';
 // only argument and returns that string after it's been reversed
 
   //Code Here
+  function reverse(str) {
+    var newString = '';
+    for (var i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+    }
+    return newString;
+  }
 
 
 //Next Problem
@@ -123,6 +169,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+  function removeItem(myGroceryList, itemToRemove) {
+    if (myGroceryList.indexOf(itemToRemove) !== -1) {
+      myGroceryList.splice(myGroceryList.indexOf(itemToRemove), 1);
+    }
+    return myGroceryList;
+  }
+
+  function addItem(myGroceryList, itemToAdd) {
+    if (myGroceryList.indexOf(itemToAdd) === -1) {
+      myGroceryList.push(itemToAdd);
+    }
+    return myGroceryList;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -134,9 +193,17 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 
 // //Write a function called maker that creates an array, fills that 
-// array with numbers from 1 to 215, then returns the array.
+// array with numbers from 1 to 25, then returns the array.
 
   //Code Here
+  function maker() {
+    var newArray = [];
+    for (var i = 0; i < 25; i++) {
+      newArray[i] = i + 1;
+    }
+    return newArray;
+  }
+
 
 
 
